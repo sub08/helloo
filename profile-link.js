@@ -1,0 +1,30 @@
+// 프로필 링크 데이터 (필요에 따라 PRD.md에서 참고한 예시 링크)
+const links = [
+    {
+        name: '데이식스',
+        url: 'https://search.naver.com/search.naver?where=nexearch&sm=top_sug.pre&fbm=0&acr=1&acq=%EB%8D%B0%EC%9D%B4&qdt=0&ie=utf8&query=%EB%8D%B0%EC%9D%B4%EC%8B%9D%EC%8A%A4&ackey=o893x7h2',
+        icon: '🎵'
+    },
+    {
+        name: '고양이',
+        url: 'https://search.naver.com/search.naver?ssc=tab.image.all&where=image&sm=tab_jum&query=%EA%B3%A0%EC%96%91%EC%9D%B4',
+        icon: '🐱'
+    },
+    {
+        name: '포트폴리오',
+        url: 'https://your-portfolio.com/',
+        icon: '💼'
+    },
+    {
+        name: '이메일',
+        url: 'mailto:honggildong@email.com',
+        icon: '✉️'
+    }
+];
+
+const list = document.getElementById('link-list');
+links.forEach(link => {
+    const li = document.createElement('li');
+    li.innerHTML = `<a class="profile-link" href="${link.url}" target="_blank">${link.icon} ${link.name}</a>`;
+    list.appendChild(li);
+});
