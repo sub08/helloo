@@ -1,96 +1,104 @@
-/* 전체 배경 */
+/* style for profile link page */
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: #b3e0ff; /* 파스텔톤 하늘색 */
+    background: #e3f0ff;
     margin: 0;
     padding: 0;
 }
-body.pastel-green {
-    background: #d4f8e8; /* 파스텔톤 연두색 */
-}
-/* 컨테이너 */
-.container {
-    max-width: 500px;
-    margin: 40px auto;
+.profile-container {
+    max-width: 400px;
+    margin: 60px auto;
     background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    padding: 36px 28px 32px 28px;
     text-align: center;
 }
-/* 프로필 이미지 */
 .profile-img {
-    width: 120px;
-    height: 120px;
+    width: 110px;
+    height: 110px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 20px;
-    border: 3px solid #e0e7ef;
-    background: #e6e6fa; /* 연보라색(Lavender) 배경 */
+    border: 3px solid #b3e0ff;
+    background: #e6e6fa;
+    margin-bottom: 18px;
 }
-/* 이름 */
-h1 {
-    margin: 0 0 10px 0;
-    font-size: 2.2em;
+.profile-name {
+    font-size: 2em;
+    font-weight: bold;
     color: #2d3a4b;
+    margin-bottom: 8px;
 }
-/* 인사 문구 */
-p {
+.profile-name::after {
+    content: '21020최수빈';
+    color: #2d3a4b;
+    font-size: 1em;
+    font-weight: bold;
+    margin-left: 0;
+    display: block;
+    text-align: center;
+}
+.profile-name {
+    color: transparent;
+    position: relative;
+}
+.profile-desc {
     color: #4a5568;
     font-size: 1.1em;
+    margin-bottom: 24px;
 }
-/* 연락처 */
-.contact {
-    margin-top: 24px;
-    font-size: 1em;
-    color: #3b4252;
+.link-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
-/* 이메일 숨김 */
-.contact strong:first-child, .contact br:first-child, .contact strong:first-child + br, .contact strong:first-child + br + strong {
-    display: none;
+.link-list li {
+    margin-bottom: 0;
 }
-/* 버튼 스타일 */
-.real-btn {
+.profile-link {
+    display: block;
     background: linear-gradient(90deg, #b3e0ff 0%, #d4f8e8 100%);
     color: #2d3a4b;
-    border: none;
+    text-decoration: none;
     border-radius: 24px;
     padding: 12px 32px;
     font-size: 1.1em;
     font-weight: 600;
-    cursor: pointer;
     box-shadow: 0 2px 8px rgba(0,0,0,0.07);
     transition: background 0.2s, transform 0.2s;
     margin-top: 24px;
 }
-.real-btn:hover {
+.profile-link:hover {
     background: linear-gradient(90deg, #d4f8e8 0%, #b3e0ff 100%);
     transform: translateY(-2px) scale(1.03);
 }
-/* 두 번째 버튼 스타일: 1번 버튼과 동일하게 */
-.real-btn2 {
-    background: linear-gradient(90deg, #b3e0ff 0%, #d4f8e8 100%);
+.link-list li:first-child .profile-link::after {
+    content: '\1F499 데이식스'; /* 💙(하늘색 하트) + 데이식스 */
+    position: absolute;
+    left: 0;
+    width: 100%;
     color: #2d3a4b;
-    border: none;
-    border-radius: 24px;
-    padding: 12px 32px;
+    background: transparent;
     font-size: 1.1em;
     font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    transition: background 0.2s, transform 0.2s;
-    margin-top: 24px;
-    margin-left: 10px;
+    text-align: center;
 }
-.real-btn2:hover {
-    background: linear-gradient(90deg, #d4f8e8 0%, #b3e0ff 100%);
-    transform: translateY(-2px) scale(1.03);
+.link-list li:first-child .profile-link {
+    color: transparent;
+    position: relative;
 }
-/* 헬로 메시지 */
-#hello-msg {
-    display: none;
-    margin-top: 20px;
-    font-size: 1.3em;
-    color: #6c63ff;
-    font-weight: bold;
+.link-list li:nth-child(2) .profile-link::after {
+    content: '\1F431 고양이'; /* 🐱(고양이 이모티콘) + 고양이 */
+    position: absolute;
+    left: 0;
+    width: 100%;
+    color: #2d3a4b;
+    background: transparent;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: center;
+}
+.link-list li:nth-child(2) .profile-link {
+    color: transparent;
+    position: relative;
 }
