@@ -3,18 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>프로필 링크 페이지</title>
-    <link rel="stylesheet" href="profile-link.css">
+    <title>소개 사이트</title>
+    <style>
+        /* 전체 배경 */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #b3e0ff; /* 파스텔톤 하늘색 */
+            margin: 0;
+            padding: 0;
+        }
+        body.pastel-green {
+            background: #d4f8e8; /* 파스텔톤 연두색 */
+        }
+        /* 컨테이너 */
+        .container {
+            max-width: 500px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 32px;
+            text-align: center;
+        }
+        /* 프로필 이미지 */
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #e0e7ef;
+            background: #e6e6fa; /* 연보라색(Lavender) 배경 */
+        }
+        /* 이름 */
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.2em;
+            color: #2d3a4b;
+        }
+        /* 인사 문구 */
+        p {
+            color: #4a5568;
+            font-size: 1.1em;
+        }
+        /* 연락처 */
+        .contact {
+            margin-top: 24px;
+            font-size: 1em;
+            color: #3b4252;
+        }
+        /* 이메일 숨김 */
+        .contact strong:first-child, .contact br:first-child, .contact strong:first-child + br, .contact strong:first-child + br + strong {
+            display: none;
+        }
+        /* 버튼 스타일 */
+        .real-btn {
+            background: linear-gradient(90deg, #b3e0ff 0%, #d4f8e8 100%);
+            color: #2d3a4b;
+            border: none;
+            border-radius: 24px;
+            padding: 12px 32px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            transition: background 0.2s, transform 0.2s;
+            margin-top: 24px;
+        }
+        .real-btn:hover {
+            background: linear-gradient(90deg, #d4f8e8 0%, #b3e0ff 100%);
+            transform: translateY(-2px) scale(1.03);
+        }
+        /* 헬로 메시지 */
+        #hello-msg {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.3em;
+            color: #6c63ff;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <div class="profile-container">
+    <div class="container">
         <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="프로필 사진" class="profile-img">
-        <div class="profile-name">씨크루</div>
-        <div class="profile-desc">안녕하세요! 다양한 프로젝트와 소셜 미디어를 한 곳에서 만나보세요.</div>
-        <ul class="link-list" id="link-list">
-            <!-- 링크 목록이 JavaScript로 렌더링됩니다. -->
-        </ul>
+        <h1>씨크루</h1>
+        <p>안녕하세요!</p>
+        <div class="contact">
+            <strong>이메일:</strong> honggildong@email.com<br>
+            <strong>연락처:</strong> 010-1234-5678
+        </div>
+        <button class="real-btn" onclick="toggleHello()">1</button>
+        <button class="real-btn2" onclick="window.open('https://search.naver.com/search.naver?where=nexearch&sm=top_sug.pre&fbm=0&acr=1&acq=%EB%8D%B0%EC%9D%B4&qdt=0&ie=utf8&query=%EB%8D%B0%EC%9D%B4%EC%8B%9D%EC%8A%A4&ackey=idl9fyk5','_blank')">2</button>
+        <div id="hello-msg">헬로</div>
+        <script>
+        function toggleHello() {
+            var msg = document.getElementById('hello-msg');
+            if (msg.style.display === 'block') {
+                msg.style.display = 'none';
+            } else {
+                msg.style.display = 'block';
+            }
+        }
+        </script>
     </div>
-    <script src="profile-link.js"></script>
 </body>
 </html>
