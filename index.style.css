@@ -43,9 +43,16 @@ body {
     position: relative;
 }
 .profile-desc {
-    color: #4a5568;
+    color: transparent;
     font-size: 1.1em;
     margin-bottom: 24px;
+}
+.profile-desc::after {
+    content: '안녕하세요!';
+    color: #4a5568;
+    font-size: 1.1em;
+    display: block;
+    text-align: center;
 }
 .link-list {
     list-style: none;
