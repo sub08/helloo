@@ -2,7 +2,7 @@
 const links = [
   {
     name: '💙 데이식스',
-    url: 'https://search.naver.com/search.naver?where=nexearch&sm=top_sug.pre&fbm=0&acr=1&acq=%EB%8D%B0%EC%9D%B4&qdt=0&ie=utf8&query=%EB%8D%B0%EC%9D%B4%EC%8B%9D%EC%8A%A4&ackey=o893x7h2',
+    url: 'https://search.naver.com/search.naver?where=nexearch&sm=top_sug.pre&fbm=0&acr=1&acq=epdl&qdt=0&ie=utf8&query=%EB%8D%B0%EC%9D%B4%EC%8B%9D%EC%8A%A4&ackey=vgs0o289',
   },
   {
     name: '🐱 고양이',
@@ -13,17 +13,26 @@ const links = [
     url: 'https://your-portfolio.com/',
   },
   {
-    name: '이메일',
+    name: '출생',
     url: 'mailto:honggildong@email.com',
   }
 ];
 
 const list = document.getElementById('link-list');
-links.forEach(link => {
+links.forEach((link, idx) => {
   const li = document.createElement('li');
-  li.innerHTML = `<a class="profile-link" href="${link.url}" target="_blank">${link.name}</a>`;
+  if (link.name === '출생') {
+    li.innerHTML = `<a class="profile-link" href="#" onclick="showBirth(event)">${link.name}</a>`;
+  } else {
+    li.innerHTML = `<a class="profile-link" href="${link.url}" target="_blank">${link.name}</a>`;
+  }
   list.appendChild(li);
 });
+
+function showBirth(e) {
+  e.preventDefault();
+  alert('2008.05.11');
+}
 
 // 프로필 링크 복사
 const copyBtn = document.getElementById('copy-link');
